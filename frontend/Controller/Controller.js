@@ -5,10 +5,10 @@ export default class  Controller{
     constructor(){
         this.dataService=new DataService()
 
-        this.dataService.getData("szemelynyt", this.megjelenit)
+        this.dataService.getData("szemelynyts", this.megjelenit)
         $(window).on("sorTorles",(e)=>{
             console.log(e.detail)
-            this.dataService.deleteData("szemelynyt", e.detail)
+            this.dataService.deleteData("szemelynyts", e.detail)
         })
     }
 

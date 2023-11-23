@@ -1,5 +1,5 @@
 import SorView from "./SorView.js";
-import {adatLeiro} from "./adatLeiro.js";
+import {adatLeiro} from "./AdatLeiro.js";
 export default class TablaView{
     #list=[]
     constructor(list, szuloElem){

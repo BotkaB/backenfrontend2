@@ -3,7 +3,7 @@ export default class DataService {
 
 constructor() {
     console.log("DataServise");
-    axios.defaults.baseURL="http://127.0.0.1:8000"
+    axios.defaults.baseURL="http://127.0.0.1:8000/api"
   }
 
   getData(vegpont, callback) {
@@ -13,7 +13,7 @@ constructor() {
        
       console.log(response);
         console.log(response.data);
-        console.log(response.data.szemnyt); 
+        //console.log(response.data.név); 
         callback(response.data);
       })
       .catch(function (error) {
