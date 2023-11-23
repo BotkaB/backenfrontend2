@@ -1,0 +1,121 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "szemelynyt",
+    "dateExported": "2023-11-23T17:22:32.788Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "12e1d049-f159-408d-a10f-95bfc2b98eca",
+            "colId": "6389922e-2ad3-4ed2-abf0-b3cbc9d1532e",
+            "containerId": "",
+            "name": "get",
+            "url": "http://127.0.0.1:8000/api/szemelynyts",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-23T17:06:17.316Z",
+            "modified": "2023-11-23T17:10:31.240Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a2d20aa8-6c62-4c97-b455-d2ad1608b69e",
+            "colId": "6389922e-2ad3-4ed2-abf0-b3cbc9d1532e",
+            "containerId": "",
+            "name": "get id",
+            "url": "http://127.0.0.1:8000/api/szemelynyts/3",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-23T17:10:54.911Z",
+            "modified": "2023-11-23T17:11:07.561Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "77dd9255-cf3a-4442-b996-498209d0bbd1",
+            "colId": "6389922e-2ad3-4ed2-abf0-b3cbc9d1532e",
+            "containerId": "",
+            "name": "post",
+            "url": "http://127.0.0.1:8000/api/szemelynyts?nev=Ica&szulh=Debrecen&szulido=1954-01-21&anyjaneve=Ica",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-23T17:11:23.076Z",
+            "modified": "2023-11-23T17:15:06.577Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nev",
+                    "value": "Ica",
+                    "isPath": false
+                },
+                {
+                    "name": "szulh",
+                    "value": "Debrecen",
+                    "isPath": false
+                },
+                {
+                    "name": "szulido",
+                    "value": "1954-01-21",
+                    "isPath": false
+                },
+                {
+                    "name": "anyjaneve",
+                    "value": "Ica",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "2633b8cc-4003-495f-a02d-74e0c56dcd91",
+            "colId": "6389922e-2ad3-4ed2-abf0-b3cbc9d1532e",
+            "containerId": "",
+            "name": "put",
+            "url": "http://127.0.0.1:8000/api/szemelynyts/3?nev=István&szulh=Budapest&szulido=1905-04-17&anyjaneve=nincs",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-23T17:20:15.062Z",
+            "modified": "2023-11-23T17:21:30.409Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nev",
+                    "value": "István",
+                    "isPath": false
+                },
+                {
+                    "name": "szulh",
+                    "value": "Budapest",
+                    "isPath": false
+                },
+                {
+                    "name": "szulido",
+                    "value": "1905-04-17",
+                    "isPath": false
+                },
+                {
+                    "name": "anyjaneve",
+                    "value": "nincs",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "02543b96-a66e-48ec-aa54-f9be7827d919",
+            "colId": "6389922e-2ad3-4ed2-abf0-b3cbc9d1532e",
+            "containerId": "",
+            "name": "delete",
+            "url": "http://127.0.0.1:8000/api/szemelynyts/26",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-23T17:21:51.861Z",
+            "modified": "2023-11-23T17:22:24.443Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
