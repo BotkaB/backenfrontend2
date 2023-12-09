@@ -9,6 +9,8 @@ export default class  Controller{
         $(window).on("sorTorles",(e)=>{
             console.log(e.detail)
             this.dataService.deleteData("szemelynyts", e.detail)
+            /* location.reload(); */
+            //this.dataService.getData("szemelynyts", this.megjelenit)
         })
     }
 

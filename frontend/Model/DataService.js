@@ -30,10 +30,11 @@ constructor() {
   putData() {}
 
   deleteData(vegpont, id) {
+    console.log(vegpont,id)
     axios
     .delete(vegpont+"/"+id)
     .then(function (response) {
-      callback(response);
+      console.log(response);
     })
     .catch(function (error) {
       // handle error

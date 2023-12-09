@@ -1,5 +1,7 @@
 import SorView from "./SorView.js";
 import {adatLeiro} from "./AdatLeiro.js";
+import FejlecView from "./FejlecView.js";
+
 export default class TablaView{
     #list=[]
     constructor(list, szuloElem){
