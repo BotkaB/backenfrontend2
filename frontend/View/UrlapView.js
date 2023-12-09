@@ -1,6 +1,7 @@
 import {adatLeiro} from "./adatLeiro.js";
 import TextUrlapView from "./TextUrlapView.js";
 import NumberUrlapView from "./NumberUrlapView.js";
+import DatumUrlapView from "./DatumUrlapView .js";
 
 
 export default class UrlapView {
@@ -57,13 +58,16 @@ export default class UrlapView {
   htmlOsszeallit() {
     let txt = "";
 
-    for (const key in adatLeiras) {
-      switch (adatLeiras[key].tipus) {
+    for (const key in adatLeiro) {
+      switch (adatLeiro[key].tipus) {
         case "text":
           this.#inputElemObjektumokLista.push(new TextUrlapView(this.formElem, adatLeiro[key], key))
           break;
         case "number":
           this.#inputElemObjektumokLista.push(new NumberUrlapView(this.formElem, adatLeiro[key], key))
+          break;
+        case "date":
+          this.#inputElemObjektumokLista.push(new DatumUrlapView(this.formElem, adatLeiro[key], key))
           break;
 
         default:

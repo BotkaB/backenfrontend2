@@ -25,9 +25,34 @@ constructor() {
       });
   }
 
-  postData() {}
+  postData(vegpont, data) {
+    console.log(data)
+    axios
+    .post(vegpont,data)
+    .then((response) => {
+      console.log ("RESP", response);
+    })
+    
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+  }
 
-  putData() {}
+  putData(vegpont, data) {
+    console.log(data)
+    console.log(vegpont, id)
+    axios
+    .put(vegpont,id,data)
+    .then((response) => {
+      console.log ("RESP", response);
+    })
+    
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+  }
 
   deleteData(vegpont, id) {
     console.log(vegpont,id)

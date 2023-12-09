@@ -24,7 +24,12 @@ export default class SorView {
     htmlOsszerak() {
       let txt="<tr>"
       for (const key in this.#obj) {
+        console.log(key)
+        if (key=="created_at" || key=="updated_at")
+        {}
+        else{
           txt+=`<td>${this.#obj[key]}</td>`
+        }
       }
       txt+=`<td><button class="torles">X</button></td>`
       txt+="</tr>"

@@ -1,5 +1,5 @@
 import SorView from "./SorView.js";
-import {adatLeiro} from "./AdatLeiro.js";
+import {adatLeiro} from "./adatLeiro.js";
 import FejlecView from "./FejlecView.js";
 
 export default class TablaView{

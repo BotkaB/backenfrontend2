@@ -2,6 +2,7 @@ export default class FejlecView {
     #obj = {};
     constructor( obj, szuloElem) {
       this.#obj = obj;
+      console.log(obj)
       
       this.szuloElem = szuloElem;
     
@@ -10,7 +11,7 @@ export default class FejlecView {
     htmlOsszerak() {
       let txt="<tr>"
       for (const key in this.#obj) {
-          txt+=`<th>${this.#obj[key]}</th>`
+          txt+=`<th>${this.#obj[key].megjelenes}</th>`
       }
   
       txt+="</tr>"

@@ -1,10 +1,11 @@
 export const adatLeiro = {
-    id: 
-    {megjelenes:"sorszám"},
+id: {
+    megjelenes:"sorszám"
+},
 
 
 
- nev:{
+nev:{
     megjelenes:"Név",
     tipus: "text",
     placeholder: "Teszt Elek",
@@ -18,7 +19,7 @@ szulh:{
   megjelenes:"Születési hely",
   tipus: "text",
   placeholder: "Budapest",
-  pattern: "^[A-Z][a-z]{3}",
+  pattern: "^[A-Z][a-z]{2}",
   value: "",
   szoveg: "Legalább 3 betű, a településnek nagybetűvel kell kezdődnie.",
   required: true,
@@ -26,12 +27,12 @@ szulh:{
 
 
 
-szuli:{
+szulido:{
     megjelenes:"Születési idő",
-    tipus: "number",
-    value: "2000",
-    pattern: {min: "1900", max:"2023"},
-    szoveg: "1900 és 2023 közötti számot adhat meg",
+    tipus: "date",
+    value: "2000-01-01",
+    pattern: {min: "1900-01-01", max:"2023-01-01"},
+    szoveg: "1900 és 2023 közötti dátumot adhat meg",
     required: false,
    
 },

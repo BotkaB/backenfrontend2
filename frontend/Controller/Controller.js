@@ -1,5 +1,6 @@
 import DataService from "../Model/DataService.js";
 import TablaView from "../View/TablaView.js";
+import UrlapView from "../View/UrlapView.js"
 
 export default class  Controller{
     constructor(){
@@ -11,7 +12,18 @@ export default class  Controller{
             this.dataService.deleteData("szemelynyts", e.detail)
             /* location.reload(); */
             //this.dataService.getData("szemelynyts", this.megjelenit)
+
+        
         })
+          
+        console.log ("controller")
+        new UrlapView ($(".urlap"));
+
+        $(window).on("ujAdatHozzaAdasa", (event)=>{
+        console.log(event.detail)
+        this.dataService.postData("szemelynyts", event.detail)
+        })
+
     }
 
 
