@@ -26,12 +26,17 @@ export default class DatumUrlapView {
         return this.inputElem.val();
 
     }
+
+    setValue(ertek) {
+        return this.inputElem.val(ertek);
+
+    }
     getValid() {
         return this.#valid;
     }
 
 
-    dateUrlapElem() {
+    datumUrlapElem() {
         let txt = `<div class="mb-3 mt-3">
           <label for="${this.key}" class="form-label">${this.obj.megjelenes}</label>
           <input type="${this.obj.tipus}" class="form-control" id="${this.key}" 

@@ -19,7 +19,7 @@ class SzemelynytFactory extends Factory
         return [
             'nev' => fake('hu_HU')->name(),
             'szulh'=> fake('hu_HU')->country(),
-            'szulido' => fake()->dateTime(),
+            'szulido' => fake()->date(),
             'anyjaneve'=>fake('hu_HU')->name(),
         ];
     }

@@ -13,11 +13,18 @@ export default class SorView {
         //console.log("törlés")
         this.trigger("sorTorles")
       })
+
+      this.modositElem=this.szuloElem.find(".modosit:last")
+      /*  console.log(this.torlesElem) */
+       this.modositElem.on("click",()=>{
+         //console.log("törlés")
+         this.trigger("sorModosit")
+       })
   
     }
   
     trigger(e){
-      const esemenyem=new CustomEvent(e,{detail:this.#obj.id})
+      const esemenyem=new CustomEvent(e,{detail:this.#obj})
       window.dispatchEvent(esemenyem)
     }
   
@@ -31,7 +38,12 @@ export default class SorView {
           txt+=`<td>${this.#obj[key]}</td>`
         }
       }
-      txt+=`<td><button class="torles">X</button></td>`
+
+      txt+=`<td><button type="button" class="modosit btn btn-warning">Módosít</button></td>`
+      txt+=`<td><button type="button" class="torles btn btn-danger">Törlés</button></td>`
+    
+     
+
       txt+="</tr>"
       //console.log(txt)
       this.szuloElem.append(txt)

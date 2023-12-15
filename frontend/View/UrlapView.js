@@ -1,7 +1,7 @@
 import {adatLeiro} from "./adatLeiro.js";
 import TextUrlapView from "./TextUrlapView.js";
 import NumberUrlapView from "./NumberUrlapView.js";
-import DatumUrlapView from "./DatumUrlapView .js";
+import DatumUrlapView from "./DatumUrlapView.js";
 
 
 export default class UrlapView {
@@ -84,5 +84,14 @@ export default class UrlapView {
     <input type="submit"  id="submit" value="küld">
     </div>`
     this.formElem.append(txt)
+  }
+
+  beTolt(sor){
+    console.log(sor)
+    this.#inputElemObjektumokLista[0].setValue(sor.nev)
+    this.#inputElemObjektumokLista[1].setValue(sor.szulh)
+    this.#inputElemObjektumokLista[2].setValue(sor.szulido)
+    this.#inputElemObjektumokLista[3].setValue(sor.anyjaneve)
+
   }
 }

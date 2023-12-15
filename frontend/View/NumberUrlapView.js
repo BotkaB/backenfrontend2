@@ -26,6 +26,10 @@ export default class NumberUrlapView {
         return this.inputElem.val();
 
     }
+    setValue(ertek) {
+        return this.inputElem.val(ertek);
+
+    }
     getValid() {
         return this.#valid;
     }
