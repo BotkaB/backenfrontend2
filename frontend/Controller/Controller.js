@@ -11,32 +11,37 @@ export default class  Controller{
         $(window).on("sorTorles",(e)=>{
             console.log(e.detail)
             this.dataService.deleteData("szemelynyts", e.detail.id)
-            /* location.reload(); */
-            //this.dataService.getData("szemelynyts", this.megjelenit)
-
+       
         
         })
 
         $(window).on("sorModosit",(e)=>{
+            $("#submit").slideToggle()
+            $("#modosit").slideToggle()
             console.log(e.detail)
             this.urlap.beTolt(e.detail)
-           
-            /* location.reload(); */
-            //this.dataService.getData("szemelynyts", this.megjelenit)
-
         
+       
         })
           
-        console.log ("controller")
+       
       
 
         $(window).on("ujAdatHozzaAdasa", (event)=>{
         console.log(event.detail)
         this.dataService.postData("szemelynyts", event.detail)
+        
         })
+
+        $(window).on("adatModositasa", (event)=>{
+            console.log(event.detail)
+            this.dataService.putData("szemelynyts", event.detail)
+            })
+    
 
         $(".gomb button").on("click",function (){
             $(".urlap").slideToggle()
+            $("#modosit").slideToggle()
             
             })
     

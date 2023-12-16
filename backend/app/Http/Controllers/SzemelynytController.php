@@ -43,6 +43,6 @@ class SzemelynytController extends Controller
     
         public function destroy($id){
             szemelynyt::find($id)->delete();
-            return "Sikeres törlés";
+            return Szemelynyt::all();
         }
 }

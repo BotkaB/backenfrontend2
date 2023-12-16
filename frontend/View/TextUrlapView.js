@@ -11,6 +11,7 @@ export default class TextUrlapView {
             console.log(this.inputElem.val())
             this.#value = this.inputElem.val()
             let patternString = this.obj.pattern;
+            console.log(patternString)
             let pattern = new RegExp(patternString);
             if (pattern.test(this.#value)) {
                 this.#valid = true;
@@ -38,8 +39,8 @@ export default class TextUrlapView {
         let txt = `<div class="mb-3 mt-3">
       <label for="${this.key}" class="form-label">${this.obj.megjelenes}</label>
       <input type="${this.obj.tipus}" class="form-control" id="${this.key}" 
-      placeholder="${this.obj.placeholder}" pattern="${this.obj.pattern}" 
-      value="${this.obj.value}" name="${this.key}">
+      placeholder="${this.obj.placeholder}"  
+      value="${this.obj.value}" name="${this.key}"  >
       </div>`
         this.szuloElem.append(txt)
 

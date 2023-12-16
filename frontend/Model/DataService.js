@@ -40,10 +40,12 @@ constructor() {
   }
 
   putData(vegpont, data) {
+   
     console.log(data)
-    console.log(vegpont, id)
+    console.log(vegpont)
     axios
-    .put(vegpont,id,data)
+    
+    .put(vegpont, id,data)
     .then((response) => {
       console.log ("RESP", response);
     })

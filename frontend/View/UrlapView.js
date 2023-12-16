@@ -6,7 +6,9 @@ import DatumUrlapView from "./DatumUrlapView.js";
 
 export default class UrlapView {
   #urlapValid = false;
-  #formAdat = {}
+  #formAdat = {};
+  #modositAdat={};
+ 
   #inputElemObjektumokLista = [] // itt tároljuk azokat az objerktumokat, amelyek létrehozzák a form elemeket
   constructor(szuloelem) {
     szuloelem.append("<form>");
@@ -29,16 +31,13 @@ export default class UrlapView {
       event.preventDefault();
       this.#urlapValid = true;
       this.#inputElemObjektumokLista.forEach((elem) => {
+       
         this.#formAdat[elem.key] = elem.getValue()
         this.#urlapValid=this.#urlapValid && elem.getValid()
-        //console.log(elem)
-        //console.log(elem.key)
-        //this.trigger("ujAdatHozzaadasa")
+      
       })
 
-      //console.log(this.#formAdat);
-      // this.#formAdat.nev = this.nevElem.val();
-      // this.#formAdat.szul = this.szulEvElem.val();
+     
       console.log(this.#formAdat);
       if (this.#urlapValid){
       this.trigger("ujAdatHozzaAdasa");
@@ -47,7 +46,36 @@ export default class UrlapView {
         console.log("Nem valid az űrlap.")
       }
     })
+
+    this.modositElem = this.formElem.find("#modosit");
+    console.log(this.modositElem);
+    
+
+    this.modositElem.on("click", (event) => {
+      event.preventDefault();
+      this.#urlapValid = true;
+      this.#inputElemObjektumokLista.forEach((elem) => {
+        console.log(elem)
+        this.#modositAdat[elem.key] = elem.getValue()
+        this.#urlapValid=this.#urlapValid && elem.getValid()
+  
+      })
+
+      console.log(this.#modositAdat);
+      if (this.#urlapValid){
+      this.trigger("adatModositasa");
+
+      }else{
+        console.log("Nem valid az űrlap.")
+      }
+    })
+
+   
   }
+
+  
+  
+
 
   trigger(esemenyNev) {
     const e = new CustomEvent(esemenyNev, { detail: this.#formAdat })
@@ -81,7 +109,9 @@ export default class UrlapView {
 
     txt += `<div class="mb-3 mt-3">
    
-    <input type="submit"  id="submit" value="küld">
+    
+    <button type="submit" id="submit" class="btn btn-primary">Létrehoz</button>
+    <button type="submit" id="modosit" class="btn btn-primary">Módosít</button>
     </div>`
     this.formElem.append(txt)
   }
@@ -92,6 +122,7 @@ export default class UrlapView {
     this.#inputElemObjektumokLista[1].setValue(sor.szulh)
     this.#inputElemObjektumokLista[2].setValue(sor.szulido)
     this.#inputElemObjektumokLista[3].setValue(sor.anyjaneve)
+
 
   }
 }

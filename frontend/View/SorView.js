@@ -15,9 +15,9 @@ export default class SorView {
       })
 
       this.modositElem=this.szuloElem.find(".modosit:last")
-      /*  console.log(this.torlesElem) */
+     
        this.modositElem.on("click",()=>{
-         //console.log("törlés")
+         
          this.trigger("sorModosit")
        })
   
@@ -31,7 +31,7 @@ export default class SorView {
     htmlOsszerak() {
       let txt="<tr>"
       for (const key in this.#obj) {
-        console.log(key)
+        //console.log(key)
         if (key=="created_at" || key=="updated_at")
         {}
         else{

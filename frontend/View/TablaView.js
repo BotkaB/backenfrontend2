@@ -8,7 +8,7 @@ export default class TablaView{
     
         this.#list=list;
    
-        szuloElem.append(`<table class='table table-striped'>
+        szuloElem.html(`<table class='table table-striped'>
         <thead></thead>
                                 <tbody></tbody>
                             </table>`)
