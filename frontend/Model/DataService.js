@@ -31,6 +31,7 @@ constructor() {
     .post(vegpont,data)
     .then((response) => {
       console.log ("RESP", response);
+      window.dispatchEvent(new Event('ujAdat'));
     })
     
     .catch(function (error) {
@@ -39,7 +40,7 @@ constructor() {
     })
   }
 
-  putData(vegpont, data) {
+  putData(vegpont, id, data) {
    
     console.log(data)
     console.log(vegpont)
@@ -48,6 +49,7 @@ constructor() {
     .put(vegpont, id,data)
     .then((response) => {
       console.log ("RESP", response);
+      window.dispatchEvent(new Event('ujAdat'));
     })
     
     .catch(function (error) {
@@ -62,6 +64,7 @@ constructor() {
     .delete(vegpont+"/"+id)
     .then(function (response) {
       console.log(response);
+      window.dispatchEvent(new Event('ujAdat'));
     })
     .catch(function (error) {
       // handle error

@@ -8,6 +8,7 @@ export default class UrlapView {
   #urlapValid = false;
   #formAdat = {};
   #modositAdat={};
+  #id;
  
   #inputElemObjektumokLista = [] // itt tároljuk azokat az objerktumokat, amelyek létrehozzák a form elemeket
   constructor(szuloelem) {
@@ -60,7 +61,7 @@ export default class UrlapView {
         this.#urlapValid=this.#urlapValid && elem.getValid()
   
       })
-
+      this.#modositAdat['id']=this.#id
       console.log(this.#modositAdat);
       if (this.#urlapValid){
       this.trigger("adatModositasa");
@@ -122,7 +123,7 @@ export default class UrlapView {
     this.#inputElemObjektumokLista[1].setValue(sor.szulh)
     this.#inputElemObjektumokLista[2].setValue(sor.szulido)
     this.#inputElemObjektumokLista[3].setValue(sor.anyjaneve)
-
+    this.#id=sor.id
 
   }
 }
