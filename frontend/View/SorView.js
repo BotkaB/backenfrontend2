@@ -39,7 +39,7 @@ export default class SorView {
         }
       }
 
-      txt+=`<td><button type="button" class="modosit btn btn-warning">Módosít</button></td>`
+      txt+=`<td><button type="button" class="modosit btn btn-info btn-disabled"disabled>Módosít</button></td>`
       txt+=`<td><button type="button" class="torles btn btn-danger">Törlés</button></td>`
     
      

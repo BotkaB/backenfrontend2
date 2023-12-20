@@ -42,6 +42,8 @@ export default class Controller {
         $(".gomb button").on("click", function () {
             $(".urlap").slideToggle()
             $("#modosit").slideToggle()
+            $('.btn-info').prop('disabled', false);
+          
 
         })
 
