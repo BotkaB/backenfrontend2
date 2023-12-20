@@ -7,7 +7,7 @@ import DatumUrlapView from "./DatumUrlapView.js";
 export default class UrlapView {
   #urlapValid = false;
   #formAdat = {};
-  #modositAdat={};
+ 
   #id;
  
   #inputElemObjektumokLista = [] // itt tároljuk azokat az objerktumokat, amelyek létrehozzák a form elemeket
@@ -57,12 +57,12 @@ export default class UrlapView {
       this.#urlapValid = true;
       this.#inputElemObjektumokLista.forEach((elem) => {
         console.log(elem)
-        this.#modositAdat[elem.key] = elem.getValue()
+        this.#formAdat[elem.key] = elem.getValue()
         this.#urlapValid=this.#urlapValid && elem.getValid()
   
       })
-      this.#modositAdat['id']=this.#id
-      console.log(this.#modositAdat);
+      this.#formAdat['id']=this.#id
+      console.log(this.#formAdat);
       if (this.#urlapValid){
       this.trigger("adatModositasa");
 

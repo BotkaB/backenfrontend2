@@ -40,13 +40,13 @@ constructor() {
     })
   }
 
-  putData(vegpont, id, data) {
+  putData(vegpont, data) {
    
     console.log(data)
-    console.log(vegpont)
+    console.log(vegpont, data.id)
     axios
     
-    .put(vegpont, id,data)
+    .put(vegpont+"/"+data.id, data)
     .then((response) => {
       console.log ("RESP", response);
       window.dispatchEvent(new Event('ujAdat'));
