@@ -51,7 +51,6 @@ export default class UrlapView {
     this.modositElem = this.formElem.find("#modosit");
     console.log(this.modositElem);
     
-
     this.modositElem.on("click", (event) => {
       event.preventDefault();
       this.#urlapValid = true;

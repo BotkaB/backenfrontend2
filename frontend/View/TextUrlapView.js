@@ -6,7 +6,9 @@ export default class TextUrlapView {
         this.obj = obj;
         this.key = key;
         this.textUrlapElem();
+       
         this.inputElem = $(`#${this.key}`);
+        this.#value = this.inputElem.val();
         this.inputElem.on("keyup", () => {
             console.log(this.inputElem.val())
             this.#value = this.inputElem.val()
