@@ -8,19 +8,7 @@ export default class DatumUrlapView {
         this.datumUrlapElem();
         this.inputElem = $(`#${this.key}`);
         this.#value = this.inputElem.val();
-        this.inputElem.on("keyup", () => {
-            console.log(this.inputElem.val())
-            this.#value = this.inputElem.val()
-            // let patternString=this.obj.pattern;
-            // let pattern=new RegExp(patternString);
-            if (this.obj.pattern.min <= this.#value && this.obj.pattern.max >= this.#value) {
-                this.#valid = true;
-            }
-            else {
-                this.#valid = false;
-            }
-            console.log(this.#valid)
-        });
+       
     }
 
     getValue() {
@@ -33,6 +21,16 @@ export default class DatumUrlapView {
 
     }
     getValid() {
+        this.#value = this.inputElem.val()
+        // let patternString=this.obj.pattern;
+        // let pattern=new RegExp(patternString);
+        if (this.obj.pattern.min <= this.#value && this.obj.pattern.max >= this.#value) {
+            this.#valid = true;
+        }
+        else {
+            this.#valid = false;
+        }
+        console.log(this.#valid)
         return this.#valid;
     }
 

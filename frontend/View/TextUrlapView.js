@@ -9,20 +9,7 @@ export default class TextUrlapView {
        
         this.inputElem = $(`#${this.key}`);
         this.#value = this.inputElem.val();
-        this.inputElem.on("keyup", () => {
-            console.log(this.inputElem.val())
-            this.#value = this.inputElem.val()
-            let patternString = this.obj.pattern;
-            console.log(patternString)
-            let pattern = new RegExp(patternString);
-            if (pattern.test(this.#value)) {
-                this.#valid = true;
-            }
-            else {
-                this.#valid = false;
-            }
-            console.log(this.#valid)
-        });
+        
     }
 
     getValue() {
@@ -35,6 +22,19 @@ export default class TextUrlapView {
     }
 
     getValid() {
+
+        console.log(this.inputElem.val())
+        this.#value = this.inputElem.val()
+        let patternString = this.obj.pattern;
+        console.log(patternString)
+        let pattern = new RegExp(patternString);
+        if (pattern.test(this.#value)) {
+            this.#valid = true;
+        }
+        else {
+            this.#valid = false;
+        }
+        console.log(this.#valid)
         return this.#valid;
     }
     textUrlapElem() {

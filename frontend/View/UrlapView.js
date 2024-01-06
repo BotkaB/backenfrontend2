@@ -1,6 +1,6 @@
 import {adatLeiro} from "./adatLeiro.js";
 import TextUrlapView from "./TextUrlapView.js";
-import NumberUrlapView from "./NumberUrlapView.js";
+
 import DatumUrlapView from "./DatumUrlapView.js";
 
 
