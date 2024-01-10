@@ -16,9 +16,9 @@ return new class extends Migration
            
             $table->string('nev');
             $table->string('szulh');
-            $table->string('szulido');
+            $table->date('szulido');
             $table->string('anyjaneve');
-           
+            $table->boolean('kedvenc') ->default(0);
             $table->timestamps();
            
         });

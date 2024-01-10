@@ -25,6 +25,7 @@ class SzemelynytController extends Controller
             $szemelynyt->szulh = $request->szulh;
             $szemelynyt->szulido = $request->szulido;
             $szemelynyt->anyjaneve = $request->anyjaneve;
+            $szemelynyt->kedvenc = $request->kedvenc;
            
             $szemelynyt->save();
             return $szemelynyt;
@@ -37,6 +38,7 @@ class SzemelynytController extends Controller
             $szemelynyt->szulh = $request->szulh;
             $szemelynyt->szulido = $request->szulido;
             $szemelynyt->anyjaneve = $request->anyjaneve;
+            $szemelynyt->kedvenc = $request->kedvenc;
             $szemelynyt->save();
             return $szemelynyt;
         }

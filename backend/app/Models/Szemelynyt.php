@@ -13,5 +13,6 @@ class Szemelynyt extends Model
         'szulh',
         'szulido',
         'anyjaneve',
+        'kedvenc'
     ];
 }
