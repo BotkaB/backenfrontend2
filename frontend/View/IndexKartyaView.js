@@ -46,7 +46,7 @@ export default class IndexKartyaView {
     this.szuloElem.find(".kedvenc:last").on("click", () => {
       this.#obj.kedvenc = true;
       this.trigger("kedveles")
-      $(".kedvenc").slideToggle()
+     
       console.log("gomb")
      
     })
