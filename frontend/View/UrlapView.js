@@ -9,6 +9,7 @@ export default class UrlapView {
   #formAdat = {};
  
   #id;
+  #kedvenc;
  
   #inputElemObjektumokLista = [] // itt tároljuk azokat az objerktumokat, amelyek létrehozzák a form elemeket
   constructor(szuloelem) {
@@ -38,7 +39,7 @@ export default class UrlapView {
       
       })
 
-     
+      this.#formAdat['kedvenc']=false;
       console.log(this.#formAdat);
       if (this.#urlapValid){
       this.trigger("ujAdatHozzaAdasa");
@@ -61,6 +62,7 @@ export default class UrlapView {
   
       })
       this.#formAdat['id']=this.#id
+      this.#formAdat['kedvenc']=this.#kedvenc;
       console.log(this.#formAdat);
       if (this.#urlapValid){
       this.trigger("adatModositasa");
@@ -91,9 +93,9 @@ export default class UrlapView {
         case "text":
           this.#inputElemObjektumokLista.push(new TextUrlapView(this.formElem, adatLeiro[key], key))
           break;
-        case "number":
+       /* case "number":
           this.#inputElemObjektumokLista.push(new NumberUrlapView(this.formElem, adatLeiro[key], key))
-          break;
+          break;*/
         case "date":
           this.#inputElemObjektumokLista.push(new DatumUrlapView(this.formElem, adatLeiro[key], key))
           break;
@@ -123,6 +125,6 @@ export default class UrlapView {
     this.#inputElemObjektumokLista[2].setValue(sor.szulido)
     this.#inputElemObjektumokLista[3].setValue(sor.anyjaneve)
     this.#id=sor.id
-
+    this.#kedvenc=sor.kedvenc
   }
 }

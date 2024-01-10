@@ -47,5 +47,10 @@ anyjaneve:{
     required: true,
 },
 
+kedvenc:{
+    megjelenes:"Kedvenc",
+   
+},
+
 
 };
