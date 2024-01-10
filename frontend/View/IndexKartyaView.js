@@ -31,7 +31,7 @@ export default class IndexKartyaView {
 </div>
 <div class="card-footer">
 <button class="kedvenc btn btn-outline-primary"  >Kedvencek</button>
-
+<button class="eltavolit btn btn-outline-primary"  >Eltávolít</button>
 </div>
 </div>
 
@@ -46,8 +46,9 @@ export default class IndexKartyaView {
     this.szuloElem.find(".kedvenc:last").on("click", () => {
       this.#obj.kedvenc = true;
       this.trigger("kedveles")
+      $(".kedvenc").slideToggle()
       console.log("gomb")
-
+     
     })
 
   }
