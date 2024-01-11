@@ -1,5 +1,6 @@
 export default class IndexKartyaView {
   #obj = {};
+  
   constructor(index, obj, szuloElem) {
     this.#obj = obj;
     this.index = index;
@@ -8,13 +9,30 @@ export default class IndexKartyaView {
   
     this.htmlOsszerak();
 
+    this.szuloElem.find(".kedvenc:last").on("click", () => {
+      this.#obj.kedvenc = true;
+      this.trigger("kedveles")
+      console.log( this.#obj.id)
+   
+   
+    })
+    this.szuloElem.find(".eltavolit:last").on("click", () => {
+      this.#obj.kedvenc = false;
+      this.trigger("kedveles");
+      console.log( this.#obj.id)
+   
+   
+    
+      
+    })
+
 
   }
 
-
-
+  
   htmlOsszerak() {
    let txt=""
+
     txt+= `
     
     
@@ -43,23 +61,10 @@ export default class IndexKartyaView {
 
     this.szuloElem.append(txt)
 
-    this.szuloElem.find(".kedvenc:last").on("click", () => {
-      this.#obj.kedvenc = true;
-      this.trigger("kedveles")
-   
-   
-    })
-    this.szuloElem.find(".eltavolit:last").on("click", () => {
-      this.#obj.kedvenc = false;
-      this.trigger("kedveles");
-     
-          
-      
-    })
-
-
-
   }
+
+
+
 
   trigger(e) {
     const esemenyem = new CustomEvent(e, { detail: this.#obj })
