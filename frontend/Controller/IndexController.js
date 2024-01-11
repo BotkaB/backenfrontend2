@@ -5,24 +5,25 @@ export default class Controller {
  
     constructor() {
         this.dataService = new DataService()
-
-
         this.dataService.getData("szemelynyts", this.megjelenit)
         $(".kedvencek").slideToggle()
        
         $(window).on("kedveles", (event) => {
             console.log(event.detail)
             this.dataService.putData("szemelynyts", event.detail)
+          
         })
 
 
         $(".gomb button").on("click", function () {
-            console.log("kedvencek")
+      
             $(".gomb").slideToggle()
             $(".adatok").slideToggle()
             $(".kedvencek").slideToggle()
             $(".kedvenc").slideToggle()
             $(".eltavolit").slideToggle()
+            
+           
         })
 
         
@@ -39,12 +40,12 @@ export default class Controller {
            
             if (list[i].kedvenc == true) {
                 new IndexKartyaView(i, list[i], $(".kedvencek"))
-
-                console.log(list[i])
-               
+                
             }
         }
         $(".eltavolit").slideToggle()
        
     }
+ 
+  
 }

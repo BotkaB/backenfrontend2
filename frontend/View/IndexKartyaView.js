@@ -14,8 +14,8 @@ export default class IndexKartyaView {
 
 
   htmlOsszerak() {
-   
-    let txt= `
+   let txt=""
+    txt+= `
     
     
     <div class="col">
@@ -46,10 +46,18 @@ export default class IndexKartyaView {
     this.szuloElem.find(".kedvenc:last").on("click", () => {
       this.#obj.kedvenc = true;
       this.trigger("kedveles")
-     
-      console.log("gomb")
-     
+   
+   
     })
+    this.szuloElem.find(".eltavolit:last").on("click", () => {
+      this.#obj.kedvenc = false;
+      this.trigger("kedveles");
+     
+          
+      
+    })
+
+
 
   }
 
