@@ -6,7 +6,7 @@ export default class Controller {
     constructor() {
         this.dataService = new DataService()
         this.dataService.getData("szemelynyts", this.megjelenit)
-        $(".kedvencek").slideToggle()
+       
        
         $(window).on("kedveles", (event) => {
             console.log(event.detail)
@@ -14,18 +14,22 @@ export default class Controller {
           
         })
 
+        $(window).on("ujAdat", (event) => {
+          
+            this.frissit()
+        })
+
 
         $(".gomb button").on("click", function () {
-      
+           
             $(".gomb").slideToggle()
             $(".adatok").slideToggle()
             $(".kedvencek").slideToggle()
-            $(".kedvenc").slideToggle()
-            $(".eltavolit").slideToggle()
-            
+           
            
         })
-
+       
+       
         
         
     }
@@ -34,17 +38,37 @@ export default class Controller {
     megjelenit(list) {
 
 
-        console.log(list)
+        //console.log(list)
         for (var i = 0; i < list.length; i++) {
-            new IndexKartyaView(i, list[i], $(".adatok"))
-           
-            if (list[i].kedvenc == true) {
+           // console.log(list[i])
+           new IndexKartyaView(i, list[i], $(".adatok"))
+          
+
+            if (list[i].kedvenc ==true) {
                 new IndexKartyaView(i, list[i], $(".kedvencek"))
-                
+          
+
+                console.log(list[i])
+           
+
             }
+           
         }
-        $(".eltavolit").slideToggle()
        
+        $(".kedvencek").slideToggle()
+       
+    }
+
+    frissit(){
+        $(".kedvencek").empty()
+        $(".adatok").empty()
+        //this.dataService = new DataService()
+        this.dataService.getData("szemelynyts", this.megjelenit)
+        $(".kedvencek").slideToggle()
+     
+
+    
+        
     }
  
   

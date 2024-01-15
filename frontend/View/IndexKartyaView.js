@@ -1,39 +1,34 @@
 export default class IndexKartyaView {
   #obj = {};
-  
+
   constructor(index, obj, szuloElem) {
     this.#obj = obj;
     this.index = index;
     this.szuloElem = szuloElem;
-   
-  
+
+
     this.htmlOsszerak();
 
     this.szuloElem.find(".kedvenc:last").on("click", () => {
-      this.#obj.kedvenc = true;
-      this.trigger("kedveles")
-      console.log( this.#obj.id)
-   
+      this.#obj.kedvenc = 1;
+      this.trigger("kedveles"); 
    
     })
     this.szuloElem.find(".eltavolit:last").on("click", () => {
-      this.#obj.kedvenc = false;
+      this.#obj.kedvenc = 0;
       this.trigger("kedveles");
-      console.log( this.#obj.id)
-   
-   
-    
-      
+     
     })
 
 
   }
 
-  
-  htmlOsszerak() {
-   let txt=""
 
-    txt+= `
+  htmlOsszerak() {
+
+    let txt = ""
+
+    txt += `
     
     
     <div class="col">
@@ -48,19 +43,27 @@ export default class IndexKartyaView {
 <p class="card-text">${this.#obj.anyjaneve}</p>
 </div>
 <div class="card-footer">
-<button class="kedvenc btn btn-outline-primary"  >Kedvencek</button>
-<button class="eltavolit btn btn-outline-primary"  >Eltávolít</button>
+<button class="kedvenc btn btn-outline-primary"   >Kedvencek</button>
+<button class="eltavolit btn btn-outline-primary" >Eltávolít</button>
 </div>
 </div>
 
 </div>`
 
 
-;
+      ;
+     
+  this.szuloElem.append(txt)
+   this.kedvencGomb=this.szuloElem.find('.kedvenc:last')
+   this.eltavolitGomb=this.szuloElem.find('.eltavolit:last')
+   console.log(this.#obj)
 
-
-    this.szuloElem.append(txt)
-
+   if(this.#obj.kedvenc==1){
+    this.kedvencGomb.hide()
+   }
+   else{
+    this.eltavolitGomb.hide()
+   }
   }
 
 
